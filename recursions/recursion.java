@@ -106,9 +106,19 @@ public class recursion {
 
         return power;
     }
+
+    public static int tiling_problem(int n){
+        if (n==0 || n==1){
+            return 1;
+        }
+        //vertical placing
+        int v = tiling_problem(n-1);
+        int h = tiling_problem(n-2);
+
+        return v+h;
+    }
     public static void main(String args[]){
-        int n[] = {1,2,3,4,3};
-        System.out.println(printPowerOp(2, 5));
+        System.out.println(tiling_problem(3));
 
     }
 }
